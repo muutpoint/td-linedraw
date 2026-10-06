@@ -69,7 +69,7 @@ gbuf_render (Override Material = gbuf_mat GLSL MAT, 3 x 32-bit buffers) ─► g
 
 ## Testing and caveats
 
-* I couldn't open TouchDesigner here. The shaders were compiled and run in a GLSL 4.5 emulation of the GLSL TOP / GLSL MAT environment (on sample images, a ray-cast G-buffer, and meshes rendered through `gbuf_mat`). The builder ran against a mock of TD's Python API, and the operator parameter names were checked against the current Derivative docs. If something fails on first run, the error shows on the node (and in its docked info DAT) or in the Textport.
+* Not yet tested inside TouchDesigner itself. The shaders were compiled and run in a GLSL 4.5 emulation of the GLSL TOP / GLSL MAT environment (on sample images, a ray-cast G-buffer, and meshes rendered through `gbuf_mat`). The builder ran against a mock of TD's Python API, and the operator parameter names were checked against the current Derivative docs. If something fails on first run, the error shows on the node (and in its docked info DAT) or in the Textport.
 * Object IDs come from a hash of each Geometry COMP's world transform plus the instance ID. Two objects with exactly the same transform get the same ID, but depth and normal edges still separate them.
 * Scene mode uses the first camera of the Render TOP. The G-buffer takes its aspect from the Render TOP's resolution.
 * The output is raster only. The original's SVG export and stroke-order optimisation for plotters aren't reproduced.
